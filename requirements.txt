@@ -1,0 +1,10 @@
+qiskit>=2.5.2,<3
+qiskit-aer>=0.17.2,<0.18
+numpy>=2.5.3,<3
+scipy>=1.18.1,<2
+networkx>=3.6.1,<4
+matplotlib>=3.11.2,<4
+pandas>=3.0.6,<4
+plotly>=7.1.0,<8
+streamlit>=1.64.0,<2
+pytest>=9.1.1,<10
