@@ -462,15 +462,15 @@ def test_architecture_ai_layer_is_isolated_from_the_control_code():
     ai_files = list((src / "ai").glob("*.py"))
     assert ai_files
     for f in ai_files:  # the AI layer imports nothing from the simulator / controllers / optimisation / emergency code
-        for node in ast.walk(ast.parse(f.read_text())):
+        for node in ast.walk(ast.parse(f.read_text(encoding="utf-8"))):
             mods = [node.module] if isinstance(node, ast.ImportFrom) and node.module else [a.name for a in getattr(node, "names", [])] if isinstance(node, ast.Import) else []
             for m in mods:
                 assert not re.match(r"(qtraffic\.(simulator|controllers|optimization|emergency|network|signals|demand|metrics|experiments)|\.\.)", m), (f.name, m)
     for f in src.rglob("*.py"):  # and nothing in the control code imports the AI layer or the SDK
         if "ai" in f.relative_to(src).parts[:1]:
             continue
-        text = f.read_text()
+        text = f.read_text(encoding="utf-8")
         assert "qtraffic.ai" not in text and "import openai" not in text and "from openai" not in text, f.name
     for f in (src / "ai").glob("*.py"):  # only featherless.py touches the SDK
         if f.name != "featherless.py":
-            assert "openai" not in f.read_text().replace("OpenAI-compatible", "").lower().replace("openai_compatible", "") or f.name == "explain.py"
+            assert "openai" not in f.read_text(encoding="utf-8").replace("OpenAI-compatible", "").lower().replace("openai_compatible", "") or f.name == "explain.py"
