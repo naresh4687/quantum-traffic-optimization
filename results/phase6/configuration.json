@@ -1,0 +1,135 @@
+{
+ "LABEL": "SIMULATION PROXY (waiting/idling only) - estimate, not a measurement",
+ "environmental_proxy": {
+  "formulas": {
+   "fuel_liters": "waiting_vehicle_seconds / 3600 * idle_fuel_rate_lph",
+   "co2_kg": "fuel_liters * emission_factor_kg_per_liter"
+  },
+  "defaults": {
+   "label": "SIMULATION PROXY (waiting/idling only) - estimate, not a measurement",
+   "idle_fuel_rate_lph": 0.6,
+   "idle_fuel_rate_status": "CONFIGURABLE SIMULATION PARAMETER (not a universal vehicle constant)",
+   "idle_fuel_rate_basis": "Default 0.6 L/h = 0.16 gal/h x 3.78541 L/gal = 0.606 L/h, based on published passenger-vehicle idling examples (Argonne National Laboratory 'Idling Reduction Savings Calculator', no load: Ford Focus gasoline 0.16, Volkswagen Jetta diesel 0.17, Ford Crown Victoria gasoline 0.39 gal/h; U.S. DOE general statement about 0.25-0.5 gal/h). Not a calibrated fleet-average value.",
+   "emission_factor_kg_per_liter": 2.347697029306865,
+   "emission_factor_basis": "SOURCE-DERIVED: U.S. EPA 8,887 g CO2 per US gallon gasoline (10,180 for diesel), converted at 3.785411784 L per gallon",
+   "fuel_type": "gasoline"
+  },
+  "sources": {
+   "emission_factor": {
+    "status": "SOURCE-DERIVED, page read for this project",
+    "source": "U.S. EPA, Greenhouse Gas Emissions from a Typical Passenger Vehicle",
+    "url": "https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle",
+    "quoted": {
+     "gasoline_g_co2_per_us_gallon": 8887.0,
+     "diesel_g_co2_per_us_gallon": 10180.0
+    },
+    "page_last_updated": "June 3, 2026",
+    "liters_per_us_gallon": 3.785411784,
+    "derived_kg_per_liter": {
+     "gasoline": 2.347697029306865,
+     "diesel": 2.689271493005951
+    },
+    "scope": "tailpipe combustion CO2 only (not life-cycle)"
+   },
+   "idle_fuel_rate": {
+    "status": "CONFIGURABLE SIMULATION PARAMETER (not a universal vehicle constant; not a calibrated fleet average)",
+    "default_lph": 0.6,
+    "default_derivation": "0.16 gal/h x 3.78541 L/gal = 0.606 L/h, rounded to 0.6",
+    "default_choice": "the lowest of the published examples, so the proxy does not overstate fuel use",
+    "source": {
+     "publisher": "Argonne National Laboratory",
+     "title": "Idling Reduction Savings Calculator",
+     "url": "https://www.anl.gov/sites/www/files/2018-02/idling_worksheet.pdf",
+     "published_examples_gal_per_hour_no_load": {
+      "Ford Focus (gasoline)": 0.16,
+      "Volkswagen Jetta (diesel)": 0.17,
+      "Ford Crown Victoria (gasoline)": 0.39
+     },
+     "published_examples_liters_per_hour": {
+      "Ford Focus (gasoline)": 0.60566588544,
+      "Volkswagen Jetta (diesel)": 0.64352000328,
+      "Ford Crown Victoria (gasoline)": 1.47631059576
+     },
+     "figures_provenance": "document title, publisher and URL confirmed; figures supplied to the project by its owner from that worksheet; the PDF text could not be retrieved by the build tooling (HTTP 403), so the figures were not independently re-read there"
+    },
+    "doe_general_statement_gal_per_hour": [
+     0.25,
+     0.5
+    ],
+    "doe_general_statement_provenance": "general statement supplied to the project; no specific page cited",
+    "sensitivity_values_lph": [
+     0.6,
+     0.9,
+     1.2,
+     1.9
+    ],
+    "sensitivity_values_meaning": "scenario parameters spanning the examples and the DOE range, not vehicle characteristics"
+   }
+  },
+  "not_modelled": [
+   "acceleration/deceleration",
+   "vehicle speed",
+   "vehicle type",
+   "engine efficiency",
+   "road gradient",
+   "temperature",
+   "congestion-dependent fuel burn",
+   "actual vehicle trajectories",
+   "exhaust composition",
+   "NOx/PM emissions",
+   "fuel used while moving or in transit"
+  ],
+  "statement": "SIMULATION PROXY - NOT A MEASUREMENT. The environmental model uses a configurable waiting/idling fuel-rate proxy. The default is based on published passenger-vehicle idling examples and is not a calibrated fleet-average value. Fuel and CO2 are linear in the simulator's waiting vehicle-seconds; they are not measurements and not calibrated real-world estimates."
+ },
+ "experiment": {
+  "scenarios": [
+   "balanced_medium",
+   "ns_heavy",
+   "ew_heavy",
+   "time_varying",
+   "downstream_congested"
+  ],
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "cycles": 60,
+  "start_state": "state after 30 fixed-time cycles (Phase 3/4), or the synthetic jam for downstream_congested",
+  "controllers": [
+   "fixed",
+   "adaptive",
+   "qubo_static",
+   "qubo_receding",
+   "qaoa_p1_saved"
+  ],
+  "qaoa": "plans SAVED by Phase 4 (seed 0 only); QAOA not rerun",
+  "emergency": {
+   "route": [
+    "I1",
+    "I2",
+    "I3",
+    "I6"
+   ],
+   "start_cycle": 40,
+   "link_seconds": 30.0,
+   "lead_seconds": 0.0,
+   "scenarios": [
+    "balanced_medium",
+    "ns_heavy",
+    "ew_heavy"
+   ],
+   "bases": [
+    "fixed",
+    "adaptive"
+   ]
+  }
+ },
+ "versions": {
+  "qiskit": "2.5.2",
+  "qiskit_aer": "0.17.2"
+ },
+ "metric_definitions": "see qtraffic.unified_metrics docstring (demanded/admitted/served/exited/throughput/in transit/waiting/queue)"
+}
