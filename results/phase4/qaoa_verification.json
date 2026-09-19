@@ -1,0 +1,115 @@
+{
+ "qiskit_version": "2.5.2",
+ "qiskit_aer_version": "0.17.2",
+ "backend": "AerSimulator(method='statevector')",
+ "n_qubits": 18,
+ "seed": 0,
+ "qaoa_config": {
+  "p": 1,
+  "shots": 8192,
+  "seed": 0,
+  "optimizer": "COBYLA",
+  "maxiter": 200,
+  "rhobeg": 0.2,
+  "tol": 0.0001,
+  "tqa_dt": 0.75
+ },
+ "same_configuration_for_every_case_and_variant_except_p": true,
+ "qiskit_bit_order_check_passed": true,
+ "repeat_run_identical_angles_and_counts": true,
+ "exact_optimum_passed_to_optimiser": false,
+ "exact_optimum_used_only_in_compare_with_exact": true,
+ "cases": [
+  {
+   "case": "balanced_medium",
+   "n_qubits": 18,
+   "max_abs_energy_error_ising_vs_qubo_1000_random_strings": 4.3655745685100555e-11,
+   "max_abs_energy_error_ising_vs_qubo_valid_strings": 2.1827872842550278e-11,
+   "statevector_probabilities_sum": {
+    "qaoa_p1": 0.9999999999999998,
+    "qaoa_p2": 1.0,
+    "qaoa_p2_warm": 1.0
+   },
+   "sampled_counts_sum_to_shots": true,
+   "every_sample_scored_by_qubo_evaluator": true,
+   "exact_plans_match_phase3": true,
+   "exact_energy_matches_phase3": true,
+   "fixed_waiting_matches_phase3": true,
+   "adaptive_waiting_matches_phase3": true,
+   "qubo_exact_waiting_matches_phase3": true
+  },
+  {
+   "case": "ns_heavy",
+   "n_qubits": 18,
+   "max_abs_energy_error_ising_vs_qubo_1000_random_strings": 1.4551915228366852e-10,
+   "max_abs_energy_error_ising_vs_qubo_valid_strings": 8.731149137020111e-11,
+   "statevector_probabilities_sum": {
+    "qaoa_p1": 1.0,
+    "qaoa_p2": 1.0,
+    "qaoa_p2_warm": 0.9999999999999999
+   },
+   "sampled_counts_sum_to_shots": true,
+   "every_sample_scored_by_qubo_evaluator": true,
+   "exact_plans_match_phase3": true,
+   "exact_energy_matches_phase3": true,
+   "fixed_waiting_matches_phase3": true,
+   "adaptive_waiting_matches_phase3": true,
+   "qubo_exact_waiting_matches_phase3": true
+  },
+  {
+   "case": "ew_heavy",
+   "n_qubits": 18,
+   "max_abs_energy_error_ising_vs_qubo_1000_random_strings": 5.820766091346741e-11,
+   "max_abs_energy_error_ising_vs_qubo_valid_strings": 4.3655745685100555e-11,
+   "statevector_probabilities_sum": {
+    "qaoa_p1": 0.9999999999999999,
+    "qaoa_p2": 1.0,
+    "qaoa_p2_warm": 1.0
+   },
+   "sampled_counts_sum_to_shots": true,
+   "every_sample_scored_by_qubo_evaluator": true,
+   "exact_plans_match_phase3": true,
+   "exact_energy_matches_phase3": true,
+   "fixed_waiting_matches_phase3": true,
+   "adaptive_waiting_matches_phase3": true,
+   "qubo_exact_waiting_matches_phase3": true
+  },
+  {
+   "case": "time_varying",
+   "n_qubits": 18,
+   "max_abs_energy_error_ising_vs_qubo_1000_random_strings": 1.4551915228366852e-10,
+   "max_abs_energy_error_ising_vs_qubo_valid_strings": 8.731149137020111e-11,
+   "statevector_probabilities_sum": {
+    "qaoa_p1": 1.0,
+    "qaoa_p2": 1.0,
+    "qaoa_p2_warm": 0.9999999999999999
+   },
+   "sampled_counts_sum_to_shots": true,
+   "every_sample_scored_by_qubo_evaluator": true,
+   "exact_plans_match_phase3": true,
+   "exact_energy_matches_phase3": true,
+   "fixed_waiting_matches_phase3": true,
+   "adaptive_waiting_matches_phase3": true,
+   "qubo_exact_waiting_matches_phase3": true
+  },
+  {
+   "case": "downstream_congested",
+   "n_qubits": 18,
+   "max_abs_energy_error_ising_vs_qubo_1000_random_strings": 0.0,
+   "max_abs_energy_error_ising_vs_qubo_valid_strings": 0.0,
+   "statevector_probabilities_sum": {
+    "qaoa_p1": 1.0,
+    "qaoa_p2": 1.0000000000000002,
+    "qaoa_p2_warm": 1.0000000000000002
+   },
+   "sampled_counts_sum_to_shots": true,
+   "every_sample_scored_by_qubo_evaluator": true,
+   "exact_plans_match_phase3": true,
+   "exact_energy_matches_phase3": true,
+   "fixed_waiting_matches_phase3": true,
+   "adaptive_waiting_matches_phase3": true,
+   "qubo_exact_waiting_matches_phase3": true
+  }
+ ],
+ "all_checks_pass": true
+}

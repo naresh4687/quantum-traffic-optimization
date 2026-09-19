@@ -1,0 +1,1320 @@
+{
+ "variant_roles": {
+  "qaoa_p1": "primary (p=1)",
+  "qaoa_p2": "primary (p=2, same deterministic ramp start as p=1)",
+  "qaoa_p2_warm": "ABLATION ONLY (p=2 started from the p=1 optimum, second layer zero)"
+ },
+ "cases": {
+  "balanced_medium": {
+   "energy_equivalence": {
+    "max_abs_error_1000_random_strings": 4.3655745685100555e-11,
+    "max_abs_error_all_2^18_strings": 1.4551915228366852e-10,
+    "min_of_ising_diag_equals_min_of_qubo": true
+   },
+   "exact": {
+    "energy": 6598.672768876964,
+    "n_optimal_configurations": 2,
+    "exact_solver_choice": "NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30",
+    "optimal_configurations": [
+     "NS20/EW40/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30",
+     "NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30"
+    ]
+   },
+   "tie_simulator_results": {
+    "NS20/EW40/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30": {
+     "qubo_energy": 6598.672768876964,
+     "waiting_per_admitted": 106.94102128623126,
+     "throughput_per_hour": 6986.538662312993,
+     "vehicles_rejected": 121.72601483712671,
+     "total_blocked": 230.39715559078255,
+     "final_queue_total": 90.0
+    },
+    "NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30": {
+     "qubo_energy": 6598.672768876964,
+     "waiting_per_admitted": 71.92973345445678,
+     "throughput_per_hour": 7196.550528057851,
+     "vehicles_rejected": 0.0,
+     "total_blocked": 0.0,
+     "final_queue_total": 0.0
+    }
+   },
+   "equal_energy_but_different_simulator_performance": true,
+   "simulator_waiting_spread_among_ties_pct": 48.674291075946115,
+   "variants": {
+    "qaoa_p1": {
+     "role": "primary (p=1)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 6576,
+      "unique_feasible": 570,
+      "feasible_shots": 1096,
+      "feasible_rate": 0.1337890625,
+      "best_feasible_energy": 6598.672768876964,
+      "best_any_energy": 6598.672768876964,
+      "shots_on_an_exact_optimal_configuration": 5,
+      "optimum_probability_sampled": 0.0006103515625,
+      "optimal_configurations_sampled": [
+       "NS20/EW40/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30",
+       "NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30"
+      ],
+      "sampled_an_exact_optimal_configuration": true
+     },
+     "statevector": {
+      "feasible_probability": 0.13089300951247113,
+      "optimum_probability": 0.00038076246379232804,
+      "expected_energy": 18784.04427340443,
+      "optimum_probability_given_feasible": 0.0029089595021959524,
+      "enrichment_of_optimum_among_feasible": 1.0603157385504247,
+      "feasible_probability_vs_uniform": 47.068336194289756,
+      "optimum_probability_vs_uniform": 49.90729765418802
+     },
+     "mean_energy_of_feasible_samples": 7359.636870428615,
+     "mean_energy_of_all_729_feasible": 7363.674652630215,
+     "simulator": {
+      "waiting_per_admitted": 106.94102128623126,
+      "throughput_per_hour": 6986.538662312993,
+      "vehicles_rejected": 121.72601483712671,
+      "total_blocked": 230.39715559078255,
+      "final_queue_total": 90.0,
+      "average_queue_length": 8.767633754953087,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.375,
+       0.375
+      ],
+      "final_gammas": [
+       0.3512491737589337
+      ],
+      "final_betas": [
+       -0.39904228099393757
+      ],
+      "function_evaluations": 39,
+      "converged_before_maxiter": true,
+      "message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+      "config": {
+       "p": 1,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    },
+    "qaoa_p2": {
+     "role": "primary (p=2, same deterministic ramp start as p=1)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 7180,
+      "unique_feasible": 501,
+      "feasible_shots": 909,
+      "feasible_rate": 0.1109619140625,
+      "best_feasible_energy": 6598.672768876964,
+      "best_any_energy": 6598.672768876964,
+      "shots_on_an_exact_optimal_configuration": 2,
+      "optimum_probability_sampled": 0.000244140625,
+      "optimal_configurations_sampled": [
+       "NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30"
+      ],
+      "sampled_an_exact_optimal_configuration": true
+     },
+     "statevector": {
+      "feasible_probability": 0.1133111783365425,
+      "optimum_probability": 0.00032544456959548166,
+      "expected_energy": 29716.206707130616,
+      "optimum_probability_given_feasible": 0.002872131191054138,
+      "enrichment_of_optimum_among_feasible": 1.0468918191392333,
+      "feasible_probability_vs_uniform": 40.74601582147407,
+      "optimum_probability_vs_uniform": 42.65667062601897
+     },
+     "mean_energy_of_feasible_samples": 7351.6330768948665,
+     "mean_energy_of_all_729_feasible": 7363.674652630215,
+     "simulator": {
+      "waiting_per_admitted": 71.92973345445678,
+      "throughput_per_hour": 7196.550528057851,
+      "vehicles_rejected": 0.0,
+      "total_blocked": 0.0,
+      "final_queue_total": 0.0,
+      "average_queue_length": 5.998548403995398,
+      "max_queue_length": 14.995891197681933
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.1875,
+       0.5625,
+       0.5625,
+       0.1875
+      ],
+      "final_gammas": [
+       0.6318631136940254,
+       0.5714585413882093
+      ],
+      "final_betas": [
+       0.3381085612927656,
+       0.6386991037939239
+      ],
+      "function_evaluations": 200,
+      "converged_before_maxiter": false,
+      "message": "Return from COBYLA because the objective function has been evaluated MAXFUN times.",
+      "config": {
+       "p": 2,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    },
+    "qaoa_p2_warm": {
+     "role": "ABLATION ONLY (p=2 started from the p=1 optimum, second layer zero)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 3876,
+      "unique_feasible": 703,
+      "feasible_shots": 2402,
+      "feasible_rate": 0.293212890625,
+      "best_feasible_energy": 6598.672768876964,
+      "best_any_energy": 6598.672768876964,
+      "shots_on_an_exact_optimal_configuration": 6,
+      "optimum_probability_sampled": 0.000732421875,
+      "optimal_configurations_sampled": [
+       "NS20/EW40/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30",
+       "NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30"
+      ],
+      "sampled_an_exact_optimal_configuration": true
+     },
+     "statevector": {
+      "feasible_probability": 0.2956678255542371,
+      "optimum_probability": 0.0009323672901624145,
+      "expected_energy": 12406.31344567352,
+      "optimum_probability_given_feasible": 0.003153428305615153,
+      "enrichment_of_optimum_among_feasible": 1.1494246173967235,
+      "feasible_probability_vs_uniform": 106.32036551727013,
+      "optimum_probability_vs_uniform": 122.207245456168
+     },
+     "mean_energy_of_feasible_samples": 7344.899817803231,
+     "mean_energy_of_all_729_feasible": 7363.674652630215,
+     "simulator": {
+      "waiting_per_admitted": 106.94102128623126,
+      "throughput_per_hour": 6986.538662312993,
+      "vehicles_rejected": 121.72601483712671,
+      "total_blocked": 230.39715559078255,
+      "final_queue_total": 90.0,
+      "average_queue_length": 8.767633754953087,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.3512491737589337,
+       0.0,
+       -0.39904228099393757,
+       0.0
+      ],
+      "final_gammas": [
+       0.2943395010298028,
+       0.8410101202025848
+      ],
+      "final_betas": [
+       -0.42163189655636696,
+       -0.18090873884689204
+      ],
+      "function_evaluations": 200,
+      "converged_before_maxiter": false,
+      "message": "Return from COBYLA because the objective function has been evaluated MAXFUN times.",
+      "config": {
+       "p": 2,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    }
+   },
+   "qaoa_plans_vs_exact_choice": {
+    "qaoa_p1": {
+     "qaoa_plans": "NS20/EW40/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30",
+     "same_plans_as_exact_solver_choice": false,
+     "same_qubo_energy_as_optimum": true
+    },
+    "qaoa_p2": {
+     "qaoa_plans": "NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30",
+     "same_plans_as_exact_solver_choice": true,
+     "same_qubo_energy_as_optimum": true
+    },
+    "qaoa_p2_warm": {
+     "qaoa_plans": "NS20/EW40/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30/NS30/EW30",
+     "same_plans_as_exact_solver_choice": false,
+     "same_qubo_energy_as_optimum": true
+    }
+   }
+  },
+  "ns_heavy": {
+   "energy_equivalence": {
+    "max_abs_error_1000_random_strings": 1.4551915228366852e-10,
+    "max_abs_error_all_2^18_strings": 4.656612873077393e-10,
+    "min_of_ising_diag_equals_min_of_qubo": true
+   },
+   "exact": {
+    "energy": 14748.055140836834,
+    "n_optimal_configurations": 1,
+    "exact_solver_choice": "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20",
+    "optimal_configurations": [
+     "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20"
+    ]
+   },
+   "tie_simulator_results": {
+    "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20": {
+     "qubo_energy": 14748.055140836834,
+     "waiting_per_admitted": 73.78602523432367,
+     "throughput_per_hour": 8023.220541961742,
+     "vehicles_rejected": 27.449520550372895,
+     "total_blocked": 0.0,
+     "final_queue_total": 5.494818822980374
+    }
+   },
+   "equal_energy_but_different_simulator_performance": false,
+   "simulator_waiting_spread_among_ties_pct": 0.0,
+   "variants": {
+    "qaoa_p1": {
+     "role": "primary (p=1)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 6629,
+      "unique_feasible": 541,
+      "feasible_shots": 1002,
+      "feasible_rate": 0.122314453125,
+      "best_feasible_energy": 14748.055140836834,
+      "best_any_energy": 14748.055140836834,
+      "shots_on_an_exact_optimal_configuration": 3,
+      "optimum_probability_sampled": 0.0003662109375,
+      "optimal_configurations_sampled": [
+       "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20"
+      ],
+      "sampled_an_exact_optimal_configuration": true
+     },
+     "statevector": {
+      "feasible_probability": 0.12527203206901377,
+      "optimum_probability": 0.00018483219268374966,
+      "expected_energy": 44308.28839219871,
+      "optimum_probability_given_feasible": 0.0014754465911586995,
+      "enrichment_of_optimum_among_feasible": 1.075600564954692,
+      "feasible_probability_vs_uniform": 45.047066631960966,
+      "optimum_probability_vs_uniform": 48.45265031888887
+     },
+     "mean_energy_of_feasible_samples": 17210.578063567198,
+     "mean_energy_of_all_729_feasible": 17235.16754737994,
+     "simulator": {
+      "waiting_per_admitted": 73.78602523432367,
+      "throughput_per_hour": 8023.220541961742,
+      "vehicles_rejected": 27.449520550372895,
+      "total_blocked": 0.0,
+      "final_queue_total": 5.494818822980374,
+      "average_queue_length": 6.746639509817566,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.375,
+       0.375
+      ],
+      "final_gammas": [
+       0.3474476337320736
+      ],
+      "final_betas": [
+       -0.40220491627319555
+      ],
+      "function_evaluations": 33,
+      "converged_before_maxiter": true,
+      "message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+      "config": {
+       "p": 1,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    },
+    "qaoa_p2": {
+     "role": "primary (p=2, same deterministic ramp start as p=1)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 7637,
+      "unique_feasible": 381,
+      "feasible_shots": 544,
+      "feasible_rate": 0.06640625,
+      "best_feasible_energy": 15048.055140836834,
+      "best_any_energy": 15048.055140836834,
+      "shots_on_an_exact_optimal_configuration": 0,
+      "optimum_probability_sampled": 0.0,
+      "optimal_configurations_sampled": [],
+      "sampled_an_exact_optimal_configuration": false
+     },
+     "statevector": {
+      "feasible_probability": 0.06318163505177767,
+      "optimum_probability": 9.21103520120202e-05,
+      "expected_energy": 81887.81348802627,
+      "optimum_probability_given_feasible": 0.0014578659120887787,
+      "enrichment_of_optimum_among_feasible": 1.0627842499127198,
+      "feasible_probability_vs_uniform": 22.719734621417288,
+      "optimum_probability_vs_uniform": 24.146176117839023
+     },
+     "mean_energy_of_feasible_samples": 17180.463125178387,
+     "mean_energy_of_all_729_feasible": 17235.16754737994,
+     "simulator": {
+      "waiting_per_admitted": 106.10652785774766,
+      "throughput_per_hour": 7650.303107971058,
+      "vehicles_rejected": 336.344919828631,
+      "total_blocked": 275.0,
+      "final_queue_total": 77.40886475369243,
+      "average_queue_length": 9.322521179032364,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.1875,
+       0.5625,
+       0.5625,
+       0.1875
+      ],
+      "final_gammas": [
+       0.6794469672483556,
+       0.5283741367804933
+      ],
+      "final_betas": [
+       0.36200472345161266,
+       0.5856107240671247
+      ],
+      "function_evaluations": 200,
+      "converged_before_maxiter": false,
+      "message": "Return from COBYLA because the objective function has been evaluated MAXFUN times.",
+      "config": {
+       "p": 2,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    },
+    "qaoa_p2_warm": {
+     "role": "ABLATION ONLY (p=2 started from the p=1 optimum, second layer zero)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 6613,
+      "unique_feasible": 539,
+      "feasible_shots": 992,
+      "feasible_rate": 0.12109375,
+      "best_feasible_energy": 14748.055140836834,
+      "best_any_energy": 14748.055140836834,
+      "shots_on_an_exact_optimal_configuration": 3,
+      "optimum_probability_sampled": 0.0003662109375,
+      "optimal_configurations_sampled": [
+       "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20"
+      ],
+      "sampled_an_exact_optimal_configuration": true
+     },
+     "statevector": {
+      "feasible_probability": 0.12524350051824837,
+      "optimum_probability": 0.00018478933984412212,
+      "expected_energy": 44308.288083486346,
+      "optimum_probability_given_feasible": 0.0014754405544357787,
+      "enrichment_of_optimum_among_feasible": 1.0755961641836829,
+      "feasible_probability_vs_uniform": 45.03680685851262,
+      "optimum_probability_vs_uniform": 48.44141670409755
+     },
+     "mean_energy_of_feasible_samples": 17211.774199098378,
+     "mean_energy_of_all_729_feasible": 17235.16754737994,
+     "simulator": {
+      "waiting_per_admitted": 73.78602523432367,
+      "throughput_per_hour": 8023.220541961742,
+      "vehicles_rejected": 27.449520550372895,
+      "total_blocked": 0.0,
+      "final_queue_total": 5.494818822980374,
+      "average_queue_length": 6.746639509817566,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.3474476337320736,
+       0.0,
+       -0.40220491627319555,
+       0.0
+      ],
+      "final_gammas": [
+       0.3473977667764202,
+       -5.105560669596906e-14
+      ],
+      "final_betas": [
+       -0.4022678327978482,
+       5.9622123909550995e-05
+      ],
+      "function_evaluations": 29,
+      "converged_before_maxiter": true,
+      "message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+      "config": {
+       "p": 2,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    }
+   },
+   "qaoa_plans_vs_exact_choice": {
+    "qaoa_p1": {
+     "qaoa_plans": "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20",
+     "same_plans_as_exact_solver_choice": true,
+     "same_qubo_energy_as_optimum": true
+    },
+    "qaoa_p2": {
+     "qaoa_plans": "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS30/EW30/NS40/EW20",
+     "same_plans_as_exact_solver_choice": false,
+     "same_qubo_energy_as_optimum": false
+    },
+    "qaoa_p2_warm": {
+     "qaoa_plans": "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20",
+     "same_plans_as_exact_solver_choice": true,
+     "same_qubo_energy_as_optimum": true
+    }
+   }
+  },
+  "ew_heavy": {
+   "energy_equivalence": {
+    "max_abs_error_1000_random_strings": 5.820766091346741e-11,
+    "max_abs_error_all_2^18_strings": 4.656612873077393e-10,
+    "min_of_ising_diag_equals_min_of_qubo": true
+   },
+   "exact": {
+    "energy": 12902.920529642099,
+    "n_optimal_configurations": 1,
+    "exact_solver_choice": "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+    "optimal_configurations": [
+     "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40"
+    ]
+   },
+   "tie_simulator_results": {
+    "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40": {
+     "qubo_energy": 12902.920529642099,
+     "waiting_per_admitted": 86.74261661499347,
+     "throughput_per_hour": 6526.342652725781,
+     "vehicles_rejected": 9.05237412785587,
+     "total_blocked": 0.0,
+     "final_queue_total": 8.67124070979029
+    }
+   },
+   "equal_energy_but_different_simulator_performance": false,
+   "simulator_waiting_spread_among_ties_pct": 0.0,
+   "variants": {
+    "qaoa_p1": {
+     "role": "primary (p=1)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 6644,
+      "unique_feasible": 555,
+      "feasible_shots": 1099,
+      "feasible_rate": 0.1341552734375,
+      "best_feasible_energy": 13052.920529642099,
+      "best_any_energy": 13052.920529642099,
+      "shots_on_an_exact_optimal_configuration": 0,
+      "optimum_probability_sampled": 0.0,
+      "optimal_configurations_sampled": [],
+      "sampled_an_exact_optimal_configuration": false
+     },
+     "statevector": {
+      "feasible_probability": 0.1332623591694603,
+      "optimum_probability": 0.00019241716083339124,
+      "expected_energy": 49703.31801250427,
+      "optimum_probability_given_feasible": 0.0014438973017782762,
+      "enrichment_of_optimum_among_feasible": 1.0526011329963634,
+      "feasible_probability_vs_uniform": 47.92034003034156,
+      "optimum_probability_vs_uniform": 50.44100420950851
+     },
+     "mean_energy_of_feasible_samples": 15116.9979464039,
+     "mean_energy_of_all_729_feasible": 15088.2124882146,
+     "simulator": {
+      "waiting_per_admitted": 135.752094249395,
+      "throughput_per_hour": 6137.0274477551075,
+      "vehicles_rejected": 322.3989176411583,
+      "total_blocked": 520.0,
+      "final_queue_total": 104.63990216716122,
+      "average_queue_length": 9.679769503368169,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.375,
+       0.375
+      ],
+      "final_gammas": [
+       0.35121968842170664
+      ],
+      "final_betas": [
+       -0.3919146543945221
+      ],
+      "function_evaluations": 36,
+      "converged_before_maxiter": true,
+      "message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+      "config": {
+       "p": 1,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    },
+    "qaoa_p2": {
+     "role": "primary (p=2, same deterministic ramp start as p=1)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 6912,
+      "unique_feasible": 592,
+      "feasible_shots": 1235,
+      "feasible_rate": 0.1507568359375,
+      "best_feasible_energy": 12902.920529642099,
+      "best_any_energy": 12902.920529642099,
+      "shots_on_an_exact_optimal_configuration": 5,
+      "optimum_probability_sampled": 0.0006103515625,
+      "optimal_configurations_sampled": [
+       "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40"
+      ],
+      "sampled_an_exact_optimal_configuration": true
+     },
+     "statevector": {
+      "feasible_probability": 0.14817889919886346,
+      "optimum_probability": 0.00020849285610894706,
+      "expected_energy": 75261.4458208467,
+      "optimum_probability_given_feasible": 0.0014070347211119396,
+      "enrichment_of_optimum_among_feasible": 1.025728311690604,
+      "feasible_probability_vs_uniform": 53.28423779367196,
+      "optimum_probability_vs_uniform": 54.65515127182382
+     },
+     "mean_energy_of_feasible_samples": 15102.456259649005,
+     "mean_energy_of_all_729_feasible": 15088.2124882146,
+     "simulator": {
+      "waiting_per_admitted": 86.74261661499347,
+      "throughput_per_hour": 6526.342652725781,
+      "vehicles_rejected": 9.05237412785587,
+      "total_blocked": 0.0,
+      "final_queue_total": 8.67124070979029,
+      "average_queue_length": 6.499749932566406,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.1875,
+       0.5625,
+       0.5625,
+       0.1875
+      ],
+      "final_gammas": [
+       0.6380758818776803,
+       0.5763728754273867
+      ],
+      "final_betas": [
+       0.3350672355044424,
+       0.6429801162481987
+      ],
+      "function_evaluations": 200,
+      "converged_before_maxiter": false,
+      "message": "Return from COBYLA because the objective function has been evaluated MAXFUN times.",
+      "config": {
+       "p": 2,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    },
+    "qaoa_p2_warm": {
+     "role": "ABLATION ONLY (p=2 started from the p=1 optimum, second layer zero)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 3741,
+      "unique_feasible": 715,
+      "feasible_shots": 2976,
+      "feasible_rate": 0.36328125,
+      "best_feasible_energy": 12902.920529642099,
+      "best_any_energy": 12902.920529642099,
+      "shots_on_an_exact_optimal_configuration": 4,
+      "optimum_probability_sampled": 0.00048828125,
+      "optimal_configurations_sampled": [
+       "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40"
+      ],
+      "sampled_an_exact_optimal_configuration": true
+     },
+     "statevector": {
+      "feasible_probability": 0.36202363719578246,
+      "optimum_probability": 0.000555853332177864,
+      "expected_energy": 29106.86667033304,
+      "optimum_probability_given_feasible": 0.001535406186412238,
+      "enrichment_of_optimum_among_feasible": 1.1193111098945216,
+      "feasible_probability_vs_uniform": 130.1815148821004,
+      "optimum_probability_vs_uniform": 145.713615910434
+     },
+     "mean_energy_of_feasible_samples": 15060.65976748445,
+     "mean_energy_of_all_729_feasible": 15088.2124882146,
+     "simulator": {
+      "waiting_per_admitted": 86.74261661499347,
+      "throughput_per_hour": 6526.342652725781,
+      "vehicles_rejected": 9.05237412785587,
+      "total_blocked": 0.0,
+      "final_queue_total": 8.67124070979029,
+      "average_queue_length": 6.499749932566406,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.35121968842170664,
+       0.0,
+       -0.3919146543945221,
+       0.0
+      ],
+      "final_gammas": [
+       0.30185635951229445,
+       0.8824914125543128
+      ],
+      "final_betas": [
+       -0.4123868527407318,
+       -0.18324320644136258
+      ],
+      "function_evaluations": 200,
+      "converged_before_maxiter": false,
+      "message": "Return from COBYLA because the objective function has been evaluated MAXFUN times.",
+      "config": {
+       "p": 2,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    }
+   },
+   "qaoa_plans_vs_exact_choice": {
+    "qaoa_p1": {
+     "qaoa_plans": "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS30/EW30",
+     "same_plans_as_exact_solver_choice": false,
+     "same_qubo_energy_as_optimum": false
+    },
+    "qaoa_p2": {
+     "qaoa_plans": "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+     "same_plans_as_exact_solver_choice": true,
+     "same_qubo_energy_as_optimum": true
+    },
+    "qaoa_p2_warm": {
+     "qaoa_plans": "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+     "same_plans_as_exact_solver_choice": true,
+     "same_qubo_energy_as_optimum": true
+    }
+   }
+  },
+  "time_varying": {
+   "energy_equivalence": {
+    "max_abs_error_1000_random_strings": 1.4551915228366852e-10,
+    "max_abs_error_all_2^18_strings": 4.656612873077393e-10,
+    "min_of_ising_diag_equals_min_of_qubo": true
+   },
+   "exact": {
+    "energy": 14748.055140836834,
+    "n_optimal_configurations": 1,
+    "exact_solver_choice": "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20",
+    "optimal_configurations": [
+     "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20"
+    ]
+   },
+   "tie_simulator_results": {
+    "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20": {
+     "qubo_energy": 14748.055140836834,
+     "waiting_per_admitted": 140.6417046129901,
+     "throughput_per_hour": 5817.61162431825,
+     "vehicles_rejected": 1075.8114445549218,
+     "total_blocked": 0.0,
+     "final_queue_total": 120.0
+    }
+   },
+   "equal_energy_but_different_simulator_performance": false,
+   "simulator_waiting_spread_among_ties_pct": 0.0,
+   "variants": {
+    "qaoa_p1": {
+     "role": "primary (p=1)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 6629,
+      "unique_feasible": 541,
+      "feasible_shots": 1002,
+      "feasible_rate": 0.122314453125,
+      "best_feasible_energy": 14748.055140836834,
+      "best_any_energy": 14748.055140836834,
+      "shots_on_an_exact_optimal_configuration": 3,
+      "optimum_probability_sampled": 0.0003662109375,
+      "optimal_configurations_sampled": [
+       "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20"
+      ],
+      "sampled_an_exact_optimal_configuration": true
+     },
+     "statevector": {
+      "feasible_probability": 0.12527203206901377,
+      "optimum_probability": 0.00018483219268374966,
+      "expected_energy": 44308.28839219871,
+      "optimum_probability_given_feasible": 0.0014754465911586995,
+      "enrichment_of_optimum_among_feasible": 1.075600564954692,
+      "feasible_probability_vs_uniform": 45.047066631960966,
+      "optimum_probability_vs_uniform": 48.45265031888887
+     },
+     "mean_energy_of_feasible_samples": 17210.578063567198,
+     "mean_energy_of_all_729_feasible": 17235.16754737994,
+     "simulator": {
+      "waiting_per_admitted": 140.6417046129901,
+      "throughput_per_hour": 5817.61162431825,
+      "vehicles_rejected": 1075.8114445549218,
+      "total_blocked": 0.0,
+      "final_queue_total": 120.0,
+      "average_queue_length": 9.382920888422284,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.375,
+       0.375
+      ],
+      "final_gammas": [
+       0.3474476337320736
+      ],
+      "final_betas": [
+       -0.40220491627319555
+      ],
+      "function_evaluations": 33,
+      "converged_before_maxiter": true,
+      "message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+      "config": {
+       "p": 1,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    },
+    "qaoa_p2": {
+     "role": "primary (p=2, same deterministic ramp start as p=1)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 7637,
+      "unique_feasible": 381,
+      "feasible_shots": 544,
+      "feasible_rate": 0.06640625,
+      "best_feasible_energy": 15048.055140836834,
+      "best_any_energy": 15048.055140836834,
+      "shots_on_an_exact_optimal_configuration": 0,
+      "optimum_probability_sampled": 0.0,
+      "optimal_configurations_sampled": [],
+      "sampled_an_exact_optimal_configuration": false
+     },
+     "statevector": {
+      "feasible_probability": 0.06318163505177767,
+      "optimum_probability": 9.21103520120202e-05,
+      "expected_energy": 81887.81348802627,
+      "optimum_probability_given_feasible": 0.0014578659120887787,
+      "enrichment_of_optimum_among_feasible": 1.0627842499127198,
+      "feasible_probability_vs_uniform": 22.719734621417288,
+      "optimum_probability_vs_uniform": 24.146176117839023
+     },
+     "mean_energy_of_feasible_samples": 17180.463125178387,
+     "mean_energy_of_all_729_feasible": 17235.16754737994,
+     "simulator": {
+      "waiting_per_admitted": 142.18530150639012,
+      "throughput_per_hour": 5817.61162431825,
+      "vehicles_rejected": 1075.8114445549218,
+      "total_blocked": 0.0,
+      "final_queue_total": 120.0,
+      "average_queue_length": 9.485902060146852,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.1875,
+       0.5625,
+       0.5625,
+       0.1875
+      ],
+      "final_gammas": [
+       0.6794469672483556,
+       0.5283741367804933
+      ],
+      "final_betas": [
+       0.36200472345161266,
+       0.5856107240671247
+      ],
+      "function_evaluations": 200,
+      "converged_before_maxiter": false,
+      "message": "Return from COBYLA because the objective function has been evaluated MAXFUN times.",
+      "config": {
+       "p": 2,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    },
+    "qaoa_p2_warm": {
+     "role": "ABLATION ONLY (p=2 started from the p=1 optimum, second layer zero)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 6613,
+      "unique_feasible": 539,
+      "feasible_shots": 992,
+      "feasible_rate": 0.12109375,
+      "best_feasible_energy": 14748.055140836834,
+      "best_any_energy": 14748.055140836834,
+      "shots_on_an_exact_optimal_configuration": 3,
+      "optimum_probability_sampled": 0.0003662109375,
+      "optimal_configurations_sampled": [
+       "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20"
+      ],
+      "sampled_an_exact_optimal_configuration": true
+     },
+     "statevector": {
+      "feasible_probability": 0.12524350051824837,
+      "optimum_probability": 0.00018478933984412212,
+      "expected_energy": 44308.288083486346,
+      "optimum_probability_given_feasible": 0.0014754405544357787,
+      "enrichment_of_optimum_among_feasible": 1.0755961641836829,
+      "feasible_probability_vs_uniform": 45.03680685851262,
+      "optimum_probability_vs_uniform": 48.44141670409755
+     },
+     "mean_energy_of_feasible_samples": 17211.774199098378,
+     "mean_energy_of_all_729_feasible": 17235.16754737994,
+     "simulator": {
+      "waiting_per_admitted": 140.6417046129901,
+      "throughput_per_hour": 5817.61162431825,
+      "vehicles_rejected": 1075.8114445549218,
+      "total_blocked": 0.0,
+      "final_queue_total": 120.0,
+      "average_queue_length": 9.382920888422284,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.3474476337320736,
+       0.0,
+       -0.40220491627319555,
+       0.0
+      ],
+      "final_gammas": [
+       0.3473977667764202,
+       -5.105560669596906e-14
+      ],
+      "final_betas": [
+       -0.4022678327978482,
+       5.9622123909550995e-05
+      ],
+      "function_evaluations": 29,
+      "converged_before_maxiter": true,
+      "message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+      "config": {
+       "p": 2,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    }
+   },
+   "qaoa_plans_vs_exact_choice": {
+    "qaoa_p1": {
+     "qaoa_plans": "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20",
+     "same_plans_as_exact_solver_choice": true,
+     "same_qubo_energy_as_optimum": true
+    },
+    "qaoa_p2": {
+     "qaoa_plans": "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS30/EW30/NS40/EW20",
+     "same_plans_as_exact_solver_choice": false,
+     "same_qubo_energy_as_optimum": false
+    },
+    "qaoa_p2_warm": {
+     "qaoa_plans": "NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20/NS40/EW20",
+     "same_plans_as_exact_solver_choice": true,
+     "same_qubo_energy_as_optimum": true
+    }
+   }
+  },
+  "downstream_congested": {
+   "energy_equivalence": {
+    "max_abs_error_1000_random_strings": 0.0,
+    "max_abs_error_all_2^18_strings": 0.0,
+    "min_of_ising_diag_equals_min_of_qubo": true
+   },
+   "exact": {
+    "energy": 15480.0,
+    "n_optimal_configurations": 4,
+    "exact_solver_choice": "NS30/EW30/NS20/EW40/NS20/EW40/NS30/EW30/NS20/EW40/NS20/EW40",
+    "optimal_configurations": [
+     "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+     "NS20/EW40/NS20/EW40/NS20/EW40/NS30/EW30/NS20/EW40/NS20/EW40",
+     "NS30/EW30/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+     "NS30/EW30/NS20/EW40/NS20/EW40/NS30/EW30/NS20/EW40/NS20/EW40"
+    ]
+   },
+   "tie_simulator_results": {
+    "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40": {
+     "qubo_energy": 15480.0,
+     "waiting_per_admitted": 96.44743037567768,
+     "throughput_per_hour": 6500.908674444083,
+     "vehicles_rejected": 22.455104502895793,
+     "total_blocked": 0.0,
+     "final_queue_total": 0.0
+    },
+    "NS20/EW40/NS20/EW40/NS20/EW40/NS30/EW30/NS20/EW40/NS20/EW40": {
+     "qubo_energy": 15480.0,
+     "waiting_per_admitted": 135.20777120338266,
+     "throughput_per_hour": 6115.365762363745,
+     "vehicles_rejected": 317.53189023559156,
+     "total_blocked": 417.40638074373504,
+     "final_queue_total": 97.18843907639493
+    },
+    "NS30/EW30/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40": {
+     "qubo_energy": 15480.0,
+     "waiting_per_admitted": 132.87274815313094,
+     "throughput_per_hour": 6138.316710290232,
+     "vehicles_rejected": 296.2473725004894,
+     "total_blocked": 397.44149694732533,
+     "final_queue_total": 100.0
+    },
+    "NS30/EW30/NS20/EW40/NS20/EW40/NS30/EW30/NS20/EW40/NS20/EW40": {
+     "qubo_energy": 15480.0,
+     "waiting_per_admitted": 175.25121046486157,
+     "throughput_per_hour": 5752.773798209892,
+     "vehicles_rejected": 591.3241582331851,
+     "total_blocked": 814.8478776910604,
+     "final_queue_total": 197.18843907639493
+    }
+   },
+   "equal_energy_but_different_simulator_performance": true,
+   "simulator_waiting_spread_among_ties_pct": 81.70645893024931,
+   "variants": {
+    "qaoa_p1": {
+     "role": "primary (p=1)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 6724,
+      "unique_feasible": 569,
+      "feasible_shots": 1091,
+      "feasible_rate": 0.1331787109375,
+      "best_feasible_energy": 15480.0,
+      "best_any_energy": 15480.0,
+      "shots_on_an_exact_optimal_configuration": 7,
+      "optimum_probability_sampled": 0.0008544921875,
+      "optimal_configurations_sampled": [
+       "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+       "NS20/EW40/NS20/EW40/NS20/EW40/NS30/EW30/NS20/EW40/NS20/EW40",
+       "NS30/EW30/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+       "NS30/EW30/NS20/EW40/NS20/EW40/NS30/EW30/NS20/EW40/NS20/EW40"
+      ],
+      "sampled_an_exact_optimal_configuration": true
+     },
+     "statevector": {
+      "feasible_probability": 0.13195146971669874,
+      "optimum_probability": 0.0007529906988910966,
+      "expected_energy": 55818.959237839954,
+      "optimum_probability_given_feasible": 0.005706573034069086,
+      "enrichment_of_optimum_among_feasible": 1.0400229354590909,
+      "feasible_probability_vs_uniform": 47.44895209521849,
+      "optimum_probability_vs_uniform": 49.34799844252691
+     },
+     "mean_energy_of_feasible_samples": 17356.691109074243,
+     "mean_energy_of_all_729_feasible": 17360.0,
+     "simulator": {
+      "waiting_per_admitted": 96.44743037567768,
+      "throughput_per_hour": 6500.908674444083,
+      "vehicles_rejected": 22.455104502895793,
+      "total_blocked": 0.0,
+      "final_queue_total": 0.0,
+      "average_queue_length": 7.225337318078614,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.375,
+       0.375
+      ],
+      "final_gammas": [
+       0.34844524829436646
+      ],
+      "final_betas": [
+       -0.3930443803784602
+      ],
+      "function_evaluations": 35,
+      "converged_before_maxiter": true,
+      "message": "Return from COBYLA because the trust region radius reaches its lower bound.",
+      "config": {
+       "p": 1,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    },
+    "qaoa_p2": {
+     "role": "primary (p=2, same deterministic ramp start as p=1)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 7141,
+      "unique_feasible": 548,
+      "feasible_shots": 1010,
+      "feasible_rate": 0.123291015625,
+      "best_feasible_energy": 15480.0,
+      "best_any_energy": 15480.0,
+      "shots_on_an_exact_optimal_configuration": 7,
+      "optimum_probability_sampled": 0.0008544921875,
+      "optimal_configurations_sampled": [
+       "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+       "NS30/EW30/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+       "NS30/EW30/NS20/EW40/NS20/EW40/NS30/EW30/NS20/EW40/NS20/EW40"
+      ],
+      "sampled_an_exact_optimal_configuration": true
+     },
+     "statevector": {
+      "feasible_probability": 0.12677421760347599,
+      "optimum_probability": 0.0007356807292271753,
+      "expected_energy": 88384.0946667985,
+      "optimum_probability_given_feasible": 0.005803078442402502,
+      "enrichment_of_optimum_among_feasible": 1.057611046127856,
+      "feasible_probability_vs_uniform": 45.58724348346448,
+      "optimum_probability_vs_uniform": 48.21357227063216
+     },
+     "mean_energy_of_feasible_samples": 17324.52475247525,
+     "mean_energy_of_all_729_feasible": 17360.0,
+     "simulator": {
+      "waiting_per_admitted": 96.44743037567768,
+      "throughput_per_hour": 6500.908674444083,
+      "vehicles_rejected": 22.455104502895793,
+      "total_blocked": 0.0,
+      "final_queue_total": 0.0,
+      "average_queue_length": 7.225337318078614,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.1875,
+       0.5625,
+       0.5625,
+       0.1875
+      ],
+      "final_gammas": [
+       0.6590840932275808,
+       0.554106248734645
+      ],
+      "final_betas": [
+       0.34282523726095376,
+       0.6198198823563993
+      ],
+      "function_evaluations": 200,
+      "converged_before_maxiter": false,
+      "message": "Return from COBYLA because the objective function has been evaluated MAXFUN times.",
+      "config": {
+       "p": 2,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    },
+    "qaoa_p2_warm": {
+     "role": "ABLATION ONLY (p=2 started from the p=1 optimum, second layer zero)",
+     "sampled": {
+      "shots": 8192,
+      "shots_sum_check": true,
+      "unique_bitstrings": 3817,
+      "unique_feasible": 713,
+      "feasible_shots": 2836,
+      "feasible_rate": 0.34619140625,
+      "best_feasible_energy": 15480.0,
+      "best_any_energy": 15480.0,
+      "shots_on_an_exact_optimal_configuration": 25,
+      "optimum_probability_sampled": 0.0030517578125,
+      "optimal_configurations_sampled": [
+       "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+       "NS20/EW40/NS20/EW40/NS20/EW40/NS30/EW30/NS20/EW40/NS20/EW40",
+       "NS30/EW30/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+       "NS30/EW30/NS20/EW40/NS20/EW40/NS30/EW30/NS20/EW40/NS20/EW40"
+      ],
+      "sampled_an_exact_optimal_configuration": true
+     },
+     "statevector": {
+      "feasible_probability": 0.34526830874777564,
+      "optimum_probability": 0.0020926185784976036,
+      "expected_energy": 33380.827842993065,
+      "optimum_probability_given_feasible": 0.006060847536477195,
+      "enrichment_of_optimum_among_feasible": 1.104589463522969,
+      "feasible_probability_vs_uniform": 124.15639990175157,
+      "optimum_probability_vs_uniform": 137.14185116041895
+     },
+     "mean_energy_of_feasible_samples": 17347.373060648802,
+     "mean_energy_of_all_729_feasible": 17360.0,
+     "simulator": {
+      "waiting_per_admitted": 96.44743037567768,
+      "throughput_per_hour": 6500.908674444083,
+      "vehicles_rejected": 22.455104502895793,
+      "total_blocked": 0.0,
+      "final_queue_total": 0.0,
+      "average_queue_length": 7.225337318078614,
+      "max_queue_length": 40.0
+     },
+     "optimizer": {
+      "initial_angles": [
+       0.34844524829436646,
+       0.0,
+       -0.3930443803784602,
+       0.0
+      ],
+      "final_gammas": [
+       0.2977537937515233,
+       0.8688130121443756
+      ],
+      "final_betas": [
+       -0.4147803074000788,
+       -0.18218615756976106
+      ],
+      "function_evaluations": 200,
+      "converged_before_maxiter": false,
+      "message": "Return from COBYLA because the objective function has been evaluated MAXFUN times.",
+      "config": {
+       "p": 2,
+       "shots": 8192,
+       "seed": 0,
+       "optimizer": "COBYLA",
+       "maxiter": 200,
+       "rhobeg": 0.2,
+       "tol": 0.0001,
+       "tqa_dt": 0.75
+      }
+     }
+    }
+   },
+   "qaoa_plans_vs_exact_choice": {
+    "qaoa_p1": {
+     "qaoa_plans": "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+     "same_plans_as_exact_solver_choice": false,
+     "same_qubo_energy_as_optimum": true
+    },
+    "qaoa_p2": {
+     "qaoa_plans": "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+     "same_plans_as_exact_solver_choice": false,
+     "same_qubo_energy_as_optimum": true
+    },
+    "qaoa_p2_warm": {
+     "qaoa_plans": "NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40/NS20/EW40",
+     "same_plans_as_exact_solver_choice": false,
+     "same_qubo_energy_as_optimum": true
+    }
+   }
+  }
+ },
+ "failures": [],
+ "bit_order": {
+  "prepared_variable_order": "001100010001100100",
+  "qiskit_key": "001001100010001100",
+  "key_is_reverse_of_variable_order": true,
+  "decoded_back_correctly": true,
+  "statevector_index_of_state": 39052
+ },
+ "circuits": {
+  "p=1": {
+   "ops": {
+    "rzz": 81,
+    "h": 18,
+    "rz": 18,
+    "rx": 18
+   },
+   "qubits": 18,
+   "ok": true
+  },
+  "p=2": {
+   "ops": {
+    "rzz": 162,
+    "rz": 36,
+    "rx": 36,
+    "h": 18
+   },
+   "qubits": 18,
+   "ok": true
+  }
+ },
+ "optimiser_isolation": {
+  "run_qaoa_parameters": [
+   "qubo",
+   "config",
+   "initial_angles"
+  ],
+  "exact_related_names_in_run_qaoa_or_engine_source": [],
+  "qaoa_runs_with_exact_solver_and_enumeration_disabled": true,
+  "angles_identical_to_saved_experiment": true
+ },
+ "all_checks_pass": true
+}
