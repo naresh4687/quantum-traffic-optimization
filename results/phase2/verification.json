@@ -1,0 +1,212 @@
+[
+ {
+  "scenario": "low",
+  "seed": 0,
+  "cycles": 120,
+  "demand_sha256": "18f539f5898eef8acd7ccb187021329514001af7f933c183ff8c8b8a276c6d70",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "low",
+  "seed": 1,
+  "cycles": 120,
+  "demand_sha256": "59ea40aa8a0496522d1352e2ffab9c92be6d5bc9d377187a83272aec301745cb",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "low",
+  "seed": 2,
+  "cycles": 120,
+  "demand_sha256": "6686d14ad372d18b9cb11379edf70f840cc5e845e263e25588c04f9e09b15277",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "low",
+  "seed": 3,
+  "cycles": 120,
+  "demand_sha256": "1a30f8580474a3dc7bebc77692ea3c162f4c08a56be52ad73848f3fb7df316d4",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "low",
+  "seed": 4,
+  "cycles": 120,
+  "demand_sha256": "1e603216f6894e3f1f3b29f2cdfcd1d1fa86cbb6176b72a5015c9d3f346aac64",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "medium",
+  "seed": 0,
+  "cycles": 120,
+  "demand_sha256": "8dcc927656828a83f577d00c6f0dccbdc60726c7a40d24d6104d5613948a2616",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "medium",
+  "seed": 1,
+  "cycles": 120,
+  "demand_sha256": "708fc680728ab363f18326f69ee8aeda7227b9e6ef97a59259d9aa9c9e0cbbea",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "medium",
+  "seed": 2,
+  "cycles": 120,
+  "demand_sha256": "a19645df1a7901974fa6eced398791fdb14a4eaee6c206a5ad65e20e5338cf77",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "medium",
+  "seed": 3,
+  "cycles": 120,
+  "demand_sha256": "f728c87fa6a171133d14278c74179fa9607c9fb7c964646edcf9d5756d1ac418",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "medium",
+  "seed": 4,
+  "cycles": 120,
+  "demand_sha256": "fa8decff0e1af696d4f48cd73e95f0fd3091ccc1a8678a4fc8bea9d805b1d55d",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "high",
+  "seed": 0,
+  "cycles": 120,
+  "demand_sha256": "9d6720a63df530607f90307f5f90a43599e1a45cf404026e696d96e588fdc988",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "high",
+  "seed": 1,
+  "cycles": 120,
+  "demand_sha256": "ebf86628fb697729983d1cbbf15f1a815e3b2c87b6793e43ab2c73b6c41d9db9",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "high",
+  "seed": 2,
+  "cycles": 120,
+  "demand_sha256": "4e1da01a5ed6ae0a220ca84bdaf4d13107f8f6b65f2ba638b69e9e9817f1637f",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "high",
+  "seed": 3,
+  "cycles": 120,
+  "demand_sha256": "9ea108541b3b777909e00d7cfd933dd4fe48db8aec72270c3ee84d8c1c872ce8",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "high",
+  "seed": 4,
+  "cycles": 120,
+  "demand_sha256": "0c5a0bc648943c3bfbf703bd5bf1b810cb4b7f3c86eb7dc993ff35ac0ab1cb8f",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "ns_heavy",
+  "seed": 0,
+  "cycles": 120,
+  "demand_sha256": "4df0f911259e9b253742f514e631f0e041335a7949997ec0a6e1f17ea0cef4a4",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "ns_heavy",
+  "seed": 1,
+  "cycles": 120,
+  "demand_sha256": "b39966f31945531b218c89d50b0cf140fdaffd9623b00bf006f2058eaf6cc3b9",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "ns_heavy",
+  "seed": 2,
+  "cycles": 120,
+  "demand_sha256": "f88c0a613cc734d5d27659b86296d434ae232e87c38c33026ada8420f24d6611",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "ns_heavy",
+  "seed": 3,
+  "cycles": 120,
+  "demand_sha256": "29cc365c7e602f717b83cf7976a029ae42c57782e14991fda1e62ff9ddcbf78b",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "ns_heavy",
+  "seed": 4,
+  "cycles": 120,
+  "demand_sha256": "7f31acb29e6b120efe5f0759df8b4edf392fecbe472f76e96676f65b6408e828",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "ew_heavy",
+  "seed": 0,
+  "cycles": 120,
+  "demand_sha256": "5180004455888c67bf5ea57e58bb0e532b95d19e2785a2815ac831f31cee07d2",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "ew_heavy",
+  "seed": 1,
+  "cycles": 120,
+  "demand_sha256": "162aff1bfc54ee7c1bd445241bdb7d999d61fad80347d5f7afd3337d6a1d26c0",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "ew_heavy",
+  "seed": 2,
+  "cycles": 120,
+  "demand_sha256": "1f838c1e2932049f6517aff9492e773dd011f8fe22f1e3caf868033dca968868",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "ew_heavy",
+  "seed": 3,
+  "cycles": 120,
+  "demand_sha256": "d3514d24ed65148680cb4f37eb8215eca8f998ce07f3d27a7ab3505b05516480",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "ew_heavy",
+  "seed": 4,
+  "cycles": 120,
+  "demand_sha256": "f3a04586f3494ac5801ef5e0e369431863de1070999d495f0ee40b5a9a6e68fe",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "time_varying",
+  "seed": 0,
+  "cycles": 120,
+  "demand_sha256": "bd08ad2548cd22960e045ce916dd69b6fd278bb241ea36b6bc930cd3fe6965c5",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "time_varying",
+  "seed": 1,
+  "cycles": 120,
+  "demand_sha256": "6e7e5e2e277a2bbeb4bdb8e4fad00c044bb33be66b41c4951d172b78377ccc1f",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "time_varying",
+  "seed": 2,
+  "cycles": 120,
+  "demand_sha256": "7e65c919a2d7bb70ee3fc1dbc3173d237699629d7d065d5a15c0e74e71a3b824",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "time_varying",
+  "seed": 3,
+  "cycles": 120,
+  "demand_sha256": "220563a13256e4842509865389a0ccbda41429a10701bbca8fed5806fc733e25",
+  "identical_for_all_controllers": true
+ },
+ {
+  "scenario": "time_varying",
+  "seed": 4,
+  "cycles": 120,
+  "demand_sha256": "9232f6609b4256364b6806058c88ba9858bbe457f63fcd42d1bc3df344b82d2d",
+  "identical_for_all_controllers": true
+ }
+]
