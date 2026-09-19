@@ -1,0 +1,242 @@
+{
+ "A_no_override": {
+  "vehicle_id": "EV1",
+  "route": [
+   "I1",
+   "I2",
+   "I3",
+   "I6"
+  ],
+  "status": "completed",
+  "entry_cycle": 40,
+  "entry_time_s": 2400.0,
+  "completion_cycle": 43,
+  "completion_time_s": 2607.658471916603,
+  "travel_time_s": 207.65847191660305,
+  "free_flow_time_s": 90.0,
+  "delay_s": 117.65847191660305,
+  "stops": 3,
+  "priority_cycles_by_intersection": {
+   "I1": [],
+   "I2": [],
+   "I3": [],
+   "I6": []
+  },
+  "crossings": [
+   {
+    "node": "I1",
+    "approach": "I1:E",
+    "arrival_time_s": 2400.0,
+    "crossing_time_s": 2457.658471916603,
+    "wait_s": 57.65847191660305,
+    "stopped": true,
+    "cycle": 40,
+    "priority": false
+   },
+   {
+    "node": "I2",
+    "approach": "I2:E",
+    "arrival_time_s": 2487.658471916603,
+    "crossing_time_s": 2517.658471916603,
+    "wait_s": 30.0,
+    "stopped": true,
+    "cycle": 41,
+    "priority": false
+   },
+   {
+    "node": "I3",
+    "approach": "I3:E",
+    "arrival_time_s": 2547.658471916603,
+    "crossing_time_s": 2577.658471916603,
+    "wait_s": 30.0,
+    "stopped": true,
+    "cycle": 42,
+    "priority": false
+   },
+   {
+    "node": "I6",
+    "approach": "I6:S",
+    "arrival_time_s": 2607.658471916603,
+    "crossing_time_s": 2607.658471916603,
+    "wait_s": 0.0,
+    "stopped": false,
+    "cycle": 43,
+    "priority": false
+   }
+  ],
+  "events": [
+   {
+    "cycle": 40,
+    "time": 2400.0,
+    "event": "entered",
+    "node": "I1"
+   },
+   {
+    "cycle": 40,
+    "time": 2457.658471916603,
+    "event": "crossed",
+    "node": "I1",
+    "wait": 57.65847191660305,
+    "stopped": true
+   },
+   {
+    "cycle": 41,
+    "time": 2517.658471916603,
+    "event": "crossed",
+    "node": "I2",
+    "wait": 30.0,
+    "stopped": true
+   },
+   {
+    "cycle": 42,
+    "time": 2577.658471916603,
+    "event": "crossed",
+    "node": "I3",
+    "wait": 30.0,
+    "stopped": true
+   },
+   {
+    "cycle": 43,
+    "time": 2607.658471916603,
+    "event": "crossed",
+    "node": "I6",
+    "wait": 0.0,
+    "stopped": false
+   },
+   {
+    "cycle": 43,
+    "time": 2607.658471916603,
+    "event": "completed",
+    "node": "I6"
+   }
+  ]
+ },
+ "B_corridor": {
+  "vehicle_id": "EV1",
+  "route": [
+   "I1",
+   "I2",
+   "I3",
+   "I6"
+  ],
+  "status": "completed",
+  "entry_cycle": 40,
+  "entry_time_s": 2400.0,
+  "completion_cycle": 42,
+  "completion_time_s": 2542.0,
+  "travel_time_s": 142.0,
+  "free_flow_time_s": 90.0,
+  "delay_s": 52.0,
+  "stops": 3,
+  "priority_cycles_by_intersection": {
+   "I1": [
+    40
+   ],
+   "I2": [
+    40,
+    41
+   ],
+   "I3": [
+    41
+   ],
+   "I6": [
+    42
+   ]
+  },
+  "crossings": [
+   {
+    "node": "I1",
+    "approach": "I1:E",
+    "arrival_time_s": 2400.0,
+    "crossing_time_s": 2427.658471916603,
+    "wait_s": 27.658471916603048,
+    "stopped": true,
+    "cycle": 40,
+    "priority": true
+   },
+   {
+    "node": "I2",
+    "approach": "I2:E",
+    "arrival_time_s": 2457.658471916603,
+    "crossing_time_s": 2462.0,
+    "wait_s": 4.341528083396952,
+    "stopped": true,
+    "cycle": 41,
+    "priority": true
+   },
+   {
+    "node": "I3",
+    "approach": "I3:E",
+    "arrival_time_s": 2492.0,
+    "crossing_time_s": 2492.0,
+    "wait_s": 0.0,
+    "stopped": false,
+    "cycle": 41,
+    "priority": true
+   },
+   {
+    "node": "I6",
+    "approach": "I6:S",
+    "arrival_time_s": 2522.0,
+    "crossing_time_s": 2542.0,
+    "wait_s": 20.0,
+    "stopped": true,
+    "cycle": 42,
+    "priority": true
+   }
+  ],
+  "events": [
+   {
+    "cycle": 40,
+    "time": 2400.0,
+    "event": "entered",
+    "node": "I1"
+   },
+   {
+    "cycle": 40,
+    "time": 2427.658471916603,
+    "event": "crossed",
+    "node": "I1",
+    "wait": 27.658471916603048,
+    "stopped": true
+   },
+   {
+    "cycle": 40,
+    "time": 2460.0,
+    "event": "waiting",
+    "node": "I2",
+    "vehicles_ahead": 0.0
+   },
+   {
+    "cycle": 41,
+    "time": 2462.0,
+    "event": "crossed",
+    "node": "I2",
+    "wait": 4.341528083396952,
+    "stopped": true
+   },
+   {
+    "cycle": 41,
+    "time": 2492.0,
+    "event": "crossed",
+    "node": "I3",
+    "wait": 0.0,
+    "stopped": false
+   },
+   {
+    "cycle": 42,
+    "time": 2542.0,
+    "event": "crossed",
+    "node": "I6",
+    "wait": 20.0,
+    "stopped": true
+   },
+   {
+    "cycle": 42,
+    "time": 2542.0,
+    "event": "completed",
+    "node": "I6"
+   }
+  ]
+ }
+}

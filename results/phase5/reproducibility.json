@@ -1,0 +1,79 @@
+{
+ "configuration": {
+  "route": [
+   "I1",
+   "I2",
+   "I3",
+   "I6"
+  ],
+  "start_cycle": 40,
+  "link_seconds": 30.0,
+  "lead_seconds": 0.0,
+  "cycles": 60,
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "scenario_bases": {
+   "balanced_medium": [
+    "fixed",
+    "adaptive",
+    "qubo_receding",
+    "qubo_exact_static",
+    "qaoa_p1_static"
+   ],
+   "ns_heavy": [
+    "fixed",
+    "adaptive"
+   ],
+   "ew_heavy": [
+    "fixed",
+    "adaptive"
+   ]
+  },
+  "primary": [
+   "balanced_medium",
+   "fixed",
+   0
+  ],
+  "saturation_flow": 0.5,
+  "event": {
+   "vehicle_id": "EV1",
+   "route": [
+    "I1",
+    "I2",
+    "I3",
+    "I6"
+   ],
+   "start_cycle": 40,
+   "link_seconds": 30.0,
+   "lead_seconds": 0.0
+  }
+ },
+ "primary_run_twice_identical": {
+  "off": {
+   "emergency_travel_time_identical": true,
+   "completion_cycle_identical": true,
+   "emergency_events_identical": true,
+   "signal_decisions_identical": true,
+   "normal_metrics_identical": true
+  },
+  "on": {
+   "emergency_travel_time_identical": true,
+   "completion_cycle_identical": true,
+   "emergency_events_identical": true,
+   "signal_decisions_identical": true,
+   "normal_metrics_identical": true
+  }
+ },
+ "primary_all_identical": true,
+ "pairs_checked_for_identical_demand": 45,
+ "demand_identical_between_A_and_B_in_every_pair": true,
+ "pre_emergency_window_identical_A_vs_B": true,
+ "primary_start_state_sha256": "50ff006e81770532acb49200d7e06ccd111e029635626379ef89b6a542068694",
+ "primary_demand_sha256": "8cb9ee32df07c0de7fd5af45e8117bb73e33159c8f91da1dc523cef5b14bc5b7",
+ "emergency_vehicle_is_massless_so_A_equals_no_emergency": true
+}
