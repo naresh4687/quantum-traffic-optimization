@@ -118,8 +118,9 @@ with st.sidebar:
     st.toggle("Enable emergency vehicle (EV1)", key="w_emg")
     st.selectbox("Route", list(ROUTE_LABELS), key="w_route", disabled=not ss.w_emg)
     lo, hi, default_start = emergency_bounds(ss.w_scenario, int(ss.w_cycles))
-    if not lo <= int(ss.w_start) <= hi:
-        ss.w_start = default_start
+    # Re-assert the value every run: when the bounds change (the cycles slider moved) Streamlit treats the slider as a new widget and
+    # would otherwise reset it to its minimum, silently moving the emergency start.
+    ss.w_start = int(ss.w_start) if lo <= int(ss.w_start) <= hi else default_start
     st.slider("Start cycle", lo, hi, key="w_start", disabled=not ss.w_emg, help="Absolute simulator cycle at which EV1 enters")
     st.button("Run simulation", type="primary", width="stretch", on_click=cb_run, key="btn_run")
     c1, c2 = st.columns(2)
@@ -158,7 +159,7 @@ def live_region() -> None:
     ui.header(run, status_for(run, idx, ss.playing), saved)
     ui.kpi_strip(run)
     # playback controls
-    b1, b2, b3, b4, b5 = st.columns([0.55, 0.55, 0.55, 1.5, 6], vertical_alignment="center")
+    b1, b2, b3, b4, b5 = st.columns([0.6, 0.6, 0.6, 2.1, 5], vertical_alignment="center")
     if b1.button("▶", key="btn_play", width="stretch", disabled=bool(ss.playing), help="Play the cycles"):
         ss.playing = True
         if ss.cycle >= last:

@@ -366,3 +366,52 @@ def test_no_secrets_or_paths_in_dashboard_sources():
     for path in src.glob("*.py"):
         body = path.read_text(encoding="utf-8")
         assert "FEATHERLESS_API_KEY=" not in body and "sk-" not in body, path.name
+
+
+# ---------------------------------------------------------------------------------------------- app-level regression (Streamlit AppTest)
+def _app():
+    from streamlit.testing.v1 import AppTest
+
+    return AppTest.from_file(str(Path(__file__).resolve().parents[1] / "app.py"), default_timeout=120)
+
+
+def test_app_starts_without_exceptions_and_shows_the_default_demo():
+    at = _app().run()
+    assert not at.exception
+    assert at.session_state["w_start"] == DEFAULT_CONFIG.resolved_start() == 40
+
+
+def test_changing_the_cycle_count_keeps_the_chosen_emergency_start():
+    """Regression: the start-cycle slider's bounds follow the cycle count, and Streamlit used to reset it to its minimum."""
+    at = _app().run()
+    at.slider(key="w_start").set_value(45).run()
+    at.slider(key="w_cycles").set_value(40).run()
+    assert not at.exception
+    assert at.session_state["w_start"] == 45
+    at.button(key="btn_run").click().run()
+    assert not at.exception
+    assert at.session_state["cfg"].cycles == 40 and at.session_state["cfg"].resolved_start() == 45
+
+
+# ---------------------------------------------------------------------------------------------- documented demo preset
+DEMO_QUERY = {"scenario": "ns_heavy", "controller": "adaptive", "seed": "0", "cycles": "60", "emergency": "1",
+              "route": "I1,I2,I3,I6", "start": "30"}
+
+
+def test_demo_preset_url_builds_the_documented_configuration(saved):
+    cfg, playhead, notes = config_from_query(DEMO_QUERY, saved)
+    assert notes == [] and playhead is None
+    assert (cfg.scenario, cfg.controller, cfg.seed, cfg.cycles, cfg.emergency_enabled, cfg.route, cfg.emergency_start) == (
+        "ns_heavy", "adaptive", 0, 60, True, ("I1", "I2", "I3", "I6"), 30)
+
+
+def test_demo_preset_runs_cleanly_and_the_corridor_completes_and_restores(saved):
+    cfg, _, _ = config_from_query(DEMO_QUERY, saved)
+    run = run_dashboard(cfg, saved)
+    v = run.emergency.vehicle
+    assert v.completed and [c.node for c in v.crossings] == ["I1", "I2", "I3", "I6"] and v.entry_cycle == 30
+    assert v.travel_time < run.emergency_off.vehicle.travel_time  # corridor helps the EV
+    assert status_for(run, default_playhead(run), False)[0] == "EMERGENCY ACTIVE"
+    last = run.n_cycles - 1
+    assert emergency_view(run, last).restored and not any(n.priority for n in network_view(run, last).nodes)
+    assert run.verification.ok is None  # honest: only start cycle 40 has a saved counterpart

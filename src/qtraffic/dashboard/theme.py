@@ -60,6 +60,9 @@ div[data-testid="stVerticalBlock"] {{gap:0.7rem;}}
 .stButton > button[kind="primary"] {{background:var(--accent);border-color:var(--accent);color:#04121A;}}
 .stButton > button[kind="primary"]:hover {{background:var(--accent);color:#04121A;filter:brightness(1.08);}}
 .stButton > button:disabled {{opacity:0.4;}}
+.stButton > button p {{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.2;}}
+[data-testid="stButtonGroup"] button {{padding:0.25rem 0.55rem;min-width:0;font-size:0.78rem;}}
+[data-testid="stButtonGroup"] > div {{flex-wrap:wrap;overflow:visible;max-width:100%;}}
 [data-baseweb="select"] > div, [data-baseweb="input"], [data-baseweb="base-input"], .stNumberInput input {{background:var(--surface-2)!important;
   border-color:var(--border-strong)!important;border-radius:5px!important;font-size:0.82rem;}}
 .stRadio label, .stToggle label, .stCheckbox label {{font-size:0.8rem;}}

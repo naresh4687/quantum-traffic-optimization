@@ -71,8 +71,15 @@ def comparison_rows(saved: SavedResults, scenario: str) -> list[dict]:
     return rows
 
 
+def _tick(label: str) -> str:
+    """Two-line tick label so five controller names stay horizontal and readable in a narrow chart."""
+    if " (seed" in label:
+        return label.replace(" (seed", "<br>(seed")
+    return label.replace(" ", "<br>", 1) if label.startswith(("QUBO", "QAOA")) else label
+
+
 def _bar(rows, key, selected, title, fmt, pct_key=None, height=230):
-    labels = [r["label"] for r in rows]
+    labels = [_tick(r["label"]) for r in rows]
     colors = [PALETTE["accent"] if r["key"] == selected else PALETTE["border_strong"] for r in rows]
     text = []
     for r in rows:
@@ -85,26 +92,26 @@ def _bar(rows, key, selected, title, fmt, pct_key=None, height=230):
                            text=text, textposition="outside", textfont=dict(size=10, color=PALETTE["text"]), cliponaxis=False,
                            hovertemplate="%{x}<br>%{y:.2f}<extra></extra>"))
     top = max(r[key] for r in rows) * 1.32
-    fig.update_layout(**plotly_layout(height=height, margin=dict(l=8, r=8, t=30, b=8), title=dict(text=title, x=0.01, font=dict(size=11, color=PALETTE["muted"])),
-                                      xaxis=axis_style(showgrid=False, tickfont=dict(size=9, color=PALETTE["muted"])),
+    fig.update_layout(**plotly_layout(height=height, margin=dict(l=8, r=8, t=44, b=8), title=dict(text=title, x=0.01, font=dict(size=11, color=PALETTE["muted"])),
+                                      xaxis=axis_style(showgrid=False, tickangle=0, tickfont=dict(size=9, color=PALETTE["muted"])),
                                       yaxis=axis_style(range=[0, top], showticklabels=False)))
     return fig
 
 
 def comparison_figures(rows: list[dict], selected: str) -> tuple[go.Figure, go.Figure, go.Figure]:
     """Waiting per admitted vehicle, throughput, and queues (average and maximum)."""
-    waiting = _bar(rows, "waiting", selected, "WAITING - s per admitted vehicle (lower is better)", "{:.1f}", "waiting_pct")
-    thr = _bar(rows, "throughput", selected, "THROUGHPUT - vehicles / hour (higher is better)", "{:,.0f}", "throughput_pct")
-    labels = [r["label"] for r in rows]
+    waiting = _bar(rows, "waiting", selected, "WAITING - s per admitted vehicle<br>lower is better", "{:.1f}", "waiting_pct")
+    thr = _bar(rows, "throughput", selected, "THROUGHPUT - vehicles per hour<br>higher is better", "{:,.0f}", "throughput_pct")
+    labels = [_tick(r["label"]) for r in rows]
     q = go.Figure()
     q.add_trace(go.Bar(name="average", x=labels, y=[r["avg_queue"] for r in rows], marker=dict(color=PALETTE["accent_dim"]), text=[f"{r['avg_queue']:.1f}" for r in rows],
                        textposition="outside", textfont=dict(size=10, color=PALETTE["text"]), cliponaxis=False))
     q.add_trace(go.Bar(name="maximum", x=labels, y=[r["max_queue"] for r in rows], marker=dict(color=PALETTE["warning"]), text=[f"{r['max_queue']:.0f}" for r in rows],
                        textposition="outside", textfont=dict(size=10, color=PALETTE["text"]), cliponaxis=False))
-    q.update_layout(**plotly_layout(height=230, margin=dict(l=8, r=8, t=30, b=8), barmode="group", showlegend=True,
-                                    legend=dict(orientation="h", y=1.14, x=1, xanchor="right", font=dict(size=10, color=PALETTE["muted"])),
-                                    title=dict(text="QUEUES - vehicles (average / maximum)", x=0.01, font=dict(size=11, color=PALETTE["muted"])),
-                                    xaxis=axis_style(showgrid=False, tickfont=dict(size=9, color=PALETTE["muted"])),
+    key = f"<span style='color:{PALETTE['accent_dim']}'>&#9632; average</span>  <span style='color:{PALETTE['warning']}'>&#9632; maximum</span>"
+    q.update_layout(**plotly_layout(height=230, margin=dict(l=8, r=8, t=44, b=8), barmode="group",
+                                    title=dict(text=f"QUEUES - vehicles<br>{key}", x=0.01, font=dict(size=11, color=PALETTE["muted"])),
+                                    xaxis=axis_style(showgrid=False, tickangle=0, tickfont=dict(size=9, color=PALETTE["muted"])),
                                     yaxis=axis_style(range=[0, max(r["max_queue"] for r in rows) * 1.3], showticklabels=False)))
     return waiting, thr, q
 
@@ -123,14 +130,14 @@ def sensitivity_rows(saved: SavedResults, scenario: str, controller_key: str) ->
 
 
 def sensitivity_figure(rows: list[dict], controller_label: str, height: int = 220) -> go.Figure:
-    labels = [r["set"].replace("idle", "").replace("Lph_", " L/h ").replace("gasoline", "gas.").replace("diesel", "dsl.") for r in rows]
+    labels = [r["set"].replace("idle", "").replace("Lph_", " L/h<br>").replace("gasoline", "gas.").replace("diesel", "dsl.") for r in rows]
     fig = go.Figure()
     fig.add_trace(go.Bar(name="Fixed", x=labels, y=[r["co2_fixed"] for r in rows], marker=dict(color=PALETTE["border_strong"])))
     fig.add_trace(go.Bar(name=controller_label, x=labels, y=[r["co2"] for r in rows], marker=dict(color=PALETTE["accent_dim"])))
     fig.update_layout(**plotly_layout(height=height, margin=dict(l=44, r=8, t=26, b=8), barmode="group", showlegend=True,
                                       legend=dict(orientation="h", y=1.16, x=1, xanchor="right", font=dict(size=10, color=PALETTE["muted"])),
                                       title=dict(text="CO2 proxy (kg) by coefficient set", x=0.01, font=dict(size=11, color=PALETTE["muted"])),
-                                      xaxis=axis_style(showgrid=False, tickfont=dict(size=9, color=PALETTE["muted"])), yaxis=axis_style(title="kg (proxy)")))
+                                      xaxis=axis_style(showgrid=False, tickangle=0, tickfont=dict(size=9, color=PALETTE["muted"])), yaxis=axis_style(title="kg (proxy)")))
     return fig
 
 
