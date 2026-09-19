@@ -65,6 +65,14 @@ were supplied to this project by its owner from that worksheet. The tooling used
 retrieve the PDF text (HTTP 403), so the figures were not independently re-read there. The DOE 0.25 to 0.5 gal/h
 statement is likewise a general statement supplied to the project, with no specific page cited.
 
+## Simulation estimate versus real-world measurement
+
+| | What it is | Where it appears |
+|---|---|---|
+| Traffic metrics (waiting, throughput, queues) | Outputs of the deterministic queue-based **simulation**. They are not field measurements of a real road. | everywhere |
+| Fuel and CO2 | A **SIMULATION ESTIMATE** (proxy) computed from simulated waiting vehicle-seconds and the two coefficients above. | labelled "SIMULATION PROXY" / "simulation estimate" in the data, the dashboard and the AI text |
+| Real-world emissions or fuel use | **Not measured and not claimed** by this project. | nowhere |
+
 ## Not modelled
 
 Acceleration/deceleration, vehicle speed, vehicle type, engine efficiency, road gradient, temperature,

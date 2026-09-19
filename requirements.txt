@@ -1,3 +1,5 @@
+# Full tested environment (Python 3.12). After installing these, install the project itself:  python -m pip install -e .
+# (the tests and app.py import the qtraffic package from src/, and one test starts a fresh interpreter that needs it installed).
 qiskit>=2.5.2,<3
 qiskit-aer>=0.17.2,<0.18
 numpy>=2.5.3,<3

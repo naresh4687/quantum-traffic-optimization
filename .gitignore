@@ -8,3 +8,16 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# other local-only files: virtual environments, editor / OS / tool caches, logs, Streamlit secrets
+.venv*/
+venv/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+.DS_Store
+*.log
+build/
+dist/
+.streamlit/secrets.toml

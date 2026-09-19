@@ -115,6 +115,15 @@ Environment: "Under the configured waiting-based simulation proxy, estimated CO2
 are linear in waiting time, are not measurements, and do not model acceleration, speed, vehicle type, engine
 efficiency or NOx/PM emissions. See `docs/metrics_and_environmental_model.md`.
 
+## Use in the dashboard
+
+The dashboard's **AI Traffic Analyst** panel has four buttons (current state, optimization, emergency, environmental impact). Each one
+builds a structured context from the *live* run or the saved results and calls the existing `explain_*` functions in `qtraffic.ai`; nothing
+in the dashboard reimplements them. A badge shows the source: **FEATHERLESS** (a validated model answer) or **LOCAL FALLBACK** (the
+deterministic explanation). A missing key is the normal demo mode, not an error. The panel only displays text: it cannot start a run,
+change a setting, choose a signal plan or touch the QUBO/QAOA/emergency code. The dashboard does not auto-load `.env`; export the
+variables in the shell that runs `streamlit run app.py` if you want live Featherless answers.
+
 ## Running
 
 Without Featherless (works out of the box):

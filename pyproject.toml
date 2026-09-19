@@ -12,8 +12,15 @@ dependencies = [
     "networkx>=3.6.1,<4",
 ]
 
+# The version ranges below are the ones pinned in requirements.txt (the tested, full environment). The core package
+# (network, simulator, controllers, metrics, emergency corridor) needs only numpy and networkx; the optional groups add
+# what the other layers import.
 [project.optional-dependencies]
+optimization = ["qiskit>=2.5.2,<3", "qiskit-aer>=0.17.2,<0.18", "scipy>=1.18.1,<2"]  # QUBO/QAOA validation and experiments
+dashboard = ["streamlit>=1.64.0,<2", "plotly>=7.1.0,<8"]  # Streamlit control-room dashboard (app.py)
 ai = ["openai>=1.40,<3"]  # Featherless explanation layer (optional; the project runs without it)
+dev = ["pytest>=9.1.1,<10"]
+all = ["qtraffic[optimization,dashboard,ai,dev]"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
