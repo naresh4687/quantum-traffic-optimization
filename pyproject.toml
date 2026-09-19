@@ -12,6 +12,9 @@ dependencies = [
     "networkx>=3.6.1,<4",
 ]
 
+[project.optional-dependencies]
+ai = ["openai>=1.40,<3"]  # Featherless explanation layer (optional; the project runs without it)
+
 [tool.setuptools.packages.find]
 where = ["src"]
 

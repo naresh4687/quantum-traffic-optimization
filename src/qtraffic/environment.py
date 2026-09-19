@@ -23,7 +23,7 @@ Coefficients: name, unit, meaning, provenance
     "CO2 emissions from a gallon of gasoline: 8,887 grams CO2/gallon" and
     "CO2 emissions from a gallon of diesel: 10,180 grams CO2/gallon" (complete oxidation of the fuel's
     carbon). Converted with 1 US gallon = 3.785411784 L:
-    gasoline = 8.887 / 3.785411784 = 2.3478 kg/L, diesel = 10.180 / 3.785411784 = 2.6893 kg/L.
+    gasoline = 8.887 / 3.785411784 = 2.3477 kg/L (2.347697), diesel = 10.180 / 3.785411784 = 2.6893 kg/L.
     Default here: gasoline. This is a tailpipe (combustion) factor, not a life-cycle factor.
 
 ``idle_fuel_rate_lph`` [litres of fuel per vehicle-hour of waiting] - CONFIGURABLE SIMULATION PARAMETER.

@@ -38,7 +38,7 @@ scale only.
 
 | Coefficient | Default | Status |
 |---|---|---|
-| `emission_factor_kg_per_liter` | 2.3478 (gasoline); diesel 2.6893 | **Source-derived.** U.S. EPA, *Greenhouse Gas Emissions from a Typical Passenger Vehicle*, https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle (page read for this project; shows "last updated June 3, 2026"): 8,887 g CO2 per US gallon of gasoline, 10,180 g per gallon of diesel; converted at 3.785411784 L per gallon. Tailpipe combustion CO2 only. |
+| `emission_factor_kg_per_liter` | 2.3477 (gasoline, exactly 2.347697); diesel 2.6893 | **Source-derived.** U.S. EPA, *Greenhouse Gas Emissions from a Typical Passenger Vehicle*, https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle (page read for this project; shows "last updated June 3, 2026"): 8,887 g CO2 per US gallon of gasoline, 10,180 g per gallon of diesel; converted at 3.785411784 L per gallon. Tailpipe combustion CO2 only. |
 | `idle_fuel_rate_lph` | 0.6 L per vehicle-hour (0.16 US gal/h x 3.78541 L/gal = 0.606 L/h, rounded) | **Configurable simulation parameter, not a universal vehicle constant.** Based on published passenger-vehicle idling examples (below). Not a calibrated fleet-average value. |
 
 The environmental model uses a configurable waiting/idling fuel-rate proxy. The default is based on published
